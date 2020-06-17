@@ -1,0 +1,79 @@
+@import "bg";
+$color: (
+
+primary: red,
+accent:white,
+back: black,
+
+);
+
+@function color($var) {
+    @return map-get($map:$color, $key:$var);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+    padding-top: 0px;
+  @extend %body;
+    .container{
+        
+        @include create();
+    }
+    main{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+    section#main{
+        background-color: color(accent);
+        width: 150px;
+        
+        height: 150px;
+        padding: 10px;
+        border-radius: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 5px 5px 10px black;
+        img{
+            width: 170px;           
+        }
+    }
+    section#one{
+        font-family: sans-serif;
+        display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+        width: 70vw;
+        margin-top: 30px;
+        padding: 15px;
+        background-color: color(accent);
+        border-radius: 25px;
+        text-align: center;
+        box-shadow: 5px 5px 10px black;
+        a{
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            border-radius: 25px;
+            background-color: red;
+            
+        }
+        h1{
+            padding-bottom: 25px;
+        }
+        p{padding-bottom: 10px;}
+    }
+}
+}
